@@ -1,0 +1,148 @@
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" ファイルの文字コード自動コンバート設定
+if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+   set encoding=utf-8
+   set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,zp932
+endif
+
+" screen使用の場合でもマウスが使用できるように
+" マウスが使用できない環境でもマウスを有効にしてしまうため、この設定ではおそらく不十分
+" (screen側の設定変更で対処できるならした方がいいかも知れない)
+if &term =~ "screen"
+   set ttymouse=xterm2
+endif
+
+" <ファイル名>~ というバックアップファイルを作る
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file
+endif
+set history=50		" keep 50 lines of command line history
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " phpのインデント設定
+  " 表示されるtabの幅を2文字に指定 tabキー入力をスペースをバラす オートインデントの幅を2文字に tabキー入力の際に入れるスペースの数を2つにする
+  " symfonyのコーディングルールに合わせた設定 ≠PHP標準
+  autocmd FileType php setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  
+  " yamlのインデント設定
+  autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  
+  " ruby のインデント設定
+  autocmd FileType ruby setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  autocmd FileType html setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType java setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType perl setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+  " 編集箇所を目立たせる
+  autocmd insertLeave * se nocul
+  autocmd InsertEnter * se cul
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+"set foldmethod=marker
+
+"set foldclose=all
+
+" tab文字を強調表示
+set list
+set listchars=tab:>-,trail:-
+
+" 行番号表示
+set number
+
+" 特殊文字の文字幅を全角に指定(これをしないと記号の付近で妙な挙動をする)
+set ambiwidth=double
+
+" カーソルが画面外に出たときのスクロール幅を5行にする
+set scrolljump=5
+
+set scrolloff=3
+
+" statusline関連の設定
+set ruler " rulerを表示 laststatus=2にした場合ほとんど関係なくなるが一応
+set laststatus=2
+set statusline=%f\ %m%r%h%w\ [%{&fileencoding},%{&ff}]\ %y%=%-14.(%c-%v,%l/%LL\ %P%)
+
+" ファイル内に記述されたvim用の設定を読み込む
+set modeline
+
+" xdebugのポート設定
+let g:debuggerPort = 9001
+
