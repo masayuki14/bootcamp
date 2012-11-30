@@ -17,3 +17,5 @@ pickle-email-*.html
 *~
 *.swp
 *.swo
+
+dotfiles/.vim/.netrwhist

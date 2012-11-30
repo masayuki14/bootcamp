@@ -146,3 +146,5 @@ set modeline
 " xdebugのポート設定
 let g:debuggerPort = 9001
 
+" 検索は大小文字区別しない
+set ic
