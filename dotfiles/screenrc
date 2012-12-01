@@ -14,7 +14,6 @@ defscrollback 50000
 defmonitor on
 defencoding utf8
 defkanji utf8
-defscrollback 50000
 encoding utf8 utf8
 vbell off
 
@@ -31,3 +30,8 @@ term xterm-256color
 
 # Macからマウスでスクロールするための設定
 termcapinfo xterm* ti@:te@
+
+# ログファイルの設定
+#logfile on
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+deflog on
