@@ -5,3 +5,5 @@
 	ui = auto
 [gui]
 	recentrepo = /Users/morisaki/jobspace/calcluster/calcweb
+[merge]
+	ff = flase
