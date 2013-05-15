@@ -7,3 +7,5 @@
 	recentrepo = /Users/morisaki/jobspace/calcluster/calcweb
 [merge]
 	ff = false
+[core]
+	excludesfile = /Users/morisaki/.gitignore
