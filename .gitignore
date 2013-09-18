@@ -19,3 +19,6 @@ pickle-email-*.html
 *.swo
 
 dotfiles/vim/.netrwhist
+
+# vimplugin controled by vundle
+dotfiles/vim/bundle

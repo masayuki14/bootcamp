@@ -151,3 +151,10 @@ let g:debuggerPort = 9001
 
 " 検索は大小文字区別しない
 set ic
+" vim-fugitiveをvundleでinstall
+filetype off
+set rtp+=~/.vim/vudle.git/
+call vundle#rc()
+
+Bundle 'https://github.com/tpope/vim-fugitive.git'
+filetype plugin indent on
