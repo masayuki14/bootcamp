@@ -32,6 +32,7 @@ endif
 set history=50		" keep 50 lines of command line history
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set ignorecase		" 検索は大小文字区別しない
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -149,8 +150,6 @@ set modeline
 " xdebugのポート設定
 let g:debuggerPort = 9001
 
-" 検索は大小文字区別しない
-set ic
 " vim-fugitiveをvundleでinstall
 filetype off
 set rtp+=~/.vim/vudle.git/
