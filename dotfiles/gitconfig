@@ -18,3 +18,10 @@
 	trustExitCode = true
 [push]
 	default = simple
+[alias]
+	st = status
+	df = diff
+	cm = commit
+	svr = svn rebase
+	svc = svn dcommit
+
