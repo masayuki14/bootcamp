@@ -22,6 +22,8 @@
 	st = status
 	df = diff
 	cm = commit
+	co = checkout
+	br = branch
 	svr = svn rebase
 	svc = svn dcommit
 
