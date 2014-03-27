@@ -150,3 +150,22 @@ set modeline
 " xdebugのポート設定
 let g:debuggerPort = 9001
 
+" NeoBundelの設定 ---------------------------------------------------------
+" vim起動時にのみruntimepathneobundle.vimを追加
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" neobundle.vimの初期化
+call neobundle#rc(expand('~/.vim/bundle'))
+
+" neobundle.vimを更新するための設定
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" 読み込むプラグインを記載
+NeoBundle 'Shougo/unite.vim'
+
+" 読み込んだプラグインも含め、ファイルタイプの検出、
+" ファイルタイプ別プラグイン/インデントを有効化する
+filetype plugin indent on
+" -------------------------------------------------------------------------
