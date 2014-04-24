@@ -150,6 +150,12 @@ set modeline
 " xdebugのポート設定
 let g:debuggerPort = 9001
 
+" solarized colorscheme
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 " NeoBundelの設定 ---------------------------------------------------------
 " vim起動時にのみruntimepathneobundle.vimを追加
 if has('vim_starting')
