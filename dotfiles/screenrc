@@ -35,3 +35,9 @@ termcapinfo xterm* ti@:te@
 #logfile on
 logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
 deflog on
+
+# iterm2 でvimのcolorがおかしい
+# 256色の設定
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+defbce "on"
