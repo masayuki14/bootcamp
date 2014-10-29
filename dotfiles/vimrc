@@ -163,7 +163,8 @@ if has('vim_starting')
 endif
 
 " neobundle.vimの初期化
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
+"call neobundle#rc(expand('~/.vim/bundle'))
 
 " neobundle.vimを更新するための設定
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -176,4 +177,6 @@ NeoBundle 'Shougo/vimfiler'
 " 読み込んだプラグインも含め、ファイルタイプの検出、
 " ファイルタイプ別プラグイン/インデントを有効化する
 filetype plugin indent on
+
+call neobundle#end()
 " -------------------------------------------------------------------------
