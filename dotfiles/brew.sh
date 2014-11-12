@@ -6,6 +6,7 @@ brew install git
 brew install git-flow
 brew install node
 brew install tig
+brew install fish
 brew install subversion
 
 brew cask install iterm2
@@ -26,5 +27,6 @@ brew cask install slack
 brew cask install sparrow
 brew cask install xtrafinder
 brew cask install mplayerx
+brew cask install libreoffice
 
 brew cask alfred link
