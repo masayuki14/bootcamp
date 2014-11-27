@@ -29,5 +29,7 @@ brew cask install xtrafinder
 brew cask install mplayerx
 brew cask install libreoffice
 brew cask install coteditor
+brew cask install virtualbox
+brew cask install vagrant
 
 brew cask alfred link
