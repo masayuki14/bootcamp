@@ -31,5 +31,6 @@ brew cask install libreoffice
 brew cask install coteditor
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install karabiner
 
 brew cask alfred link
