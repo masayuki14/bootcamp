@@ -1,0 +1,21 @@
+alias ls='ls -G'
+alias ll='ls -l'
+alias la='ls -al'
+alias grep='grep -n --color'
+alias vimrm='find . -name \*~ |xargs rm'
+
+# ディレクトリ指定だけで移動する
+setopt AUTO_CD
+
+# cdの履歴を保存して `cd + Tab` で補完
+setopt AUTO_PUSHD
+autoload -Uz compinit
+compinit
+
+# 単語区切りに `/` を追加
+autoload -Uz select-word-style
+select-word-style default
+zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-style unspecified
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
