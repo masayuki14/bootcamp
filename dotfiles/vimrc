@@ -89,6 +89,7 @@ if has("autocmd")
   autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType javascript setl tabstop=4 noexpandtab shiftwidth=4 softtabstop=4
   autocmd BufRead *.erb set filetype=eruby tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  autocmd BufRead *.scss set filetype=css
 
   " 編集箇所を目立たせる
   autocmd insertLeave * se nocul
