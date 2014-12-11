@@ -19,3 +19,19 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# プロンプトの設定
+PROMPT="%m%# "
+RPROMPT="[%~ %*]"
+
+# 候補が3以上でカーソル選択
+zstyle ':completion:*:default' menu select=3
+
+# 大文字と小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# コマンド履歴設定
+HISTFILE=~/.zsh_history
+HISTSISE=1000000
+SAVEHIST=1000000
+
