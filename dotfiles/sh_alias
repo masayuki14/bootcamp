@@ -1,0 +1,11 @@
+# vi: set ft=config :
+alias ls='ls -G'
+alias l.='ls -d .*'
+alias ll='ls -l'
+alias la='ls -al'
+alias grep='grep --color=auto -n --exclude="*~"'
+alias vimrm='find . -name \*~ | xargs rm'
+alias tailf='tail -f'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'

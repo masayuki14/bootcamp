@@ -1,8 +1,6 @@
-alias ls='ls -G'
-alias ll='ls -l'
-alias la='ls -al'
-alias grep='grep -n --color'
-alias vimrm='find . -name \*~ |xargs rm'
+if [ -f ~/.sh_alias ]; then
+    source ~/.sh_alias
+fi
 
 # ディレクトリ指定だけで移動する
 setopt AUTO_CD
