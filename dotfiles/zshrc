@@ -48,3 +48,17 @@ zstyle ':chpwd:*' recent-dirs-max 200
 # cdr が cd も兼ねる
 zstyle ':chpwd:*' recent-dirs-default true
 
+# コマンド履歴のキーバインド
+autoload history-incremental-pattern-search
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
+
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey '^p' history-beginning-search-backward-end
+bindkey '^n' history-beginning-search-forward-end
+
+# zmv
+autoload -Uz zmv
+alias zmv-'noglob zmv -W'
