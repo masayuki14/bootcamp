@@ -35,8 +35,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # コマンド履歴設定
 HISTFILE=~/.zsh_history
-HISTSISE=1000000
+HISTSIZE=1000000
 SAVEHIST=1000000
+setopt share_history
 
 # cdr を使う設定
 autoload -Uz add-zsh-hook
