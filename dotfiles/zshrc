@@ -23,10 +23,6 @@ zstyle ':zle:*' word-style unspecified
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# プロンプトの設定
-PROMPT="%m%# "
-RPROMPT="[%~ %*]"
-
 # 候補が3以上でカーソル選択
 zstyle ':completion:*:default' menu select=3
 
@@ -62,3 +58,29 @@ bindkey '^n' history-beginning-search-forward-end
 # zmv
 autoload -Uz zmv
 alias zmv-'noglob zmv -W'
+
+# vsc_info
+# 0:black、1:red、2:green、3:yellow、4:blue、5:magenta、6:cyan、7:whiteが利用できる。数字は色の番号。
+autoload -Uz vcs_info
+#autoload -Uz add-zsh-hook
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%a|%b]'
+function _update_vsc_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    psvar[1]="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd _update_vsc_info_msg
+PROMPT="%m %v%# "
+RPROMPT="[%F{yellow}%3~%f %F{white}%*]%f"
+
+# プロンプトの設定
+#PROMPT="%m%# "
+#RPROMPT="[%~ %*]"
+
+#zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+#zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+#zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+#precmd () { vcs_info }
+#PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
+
