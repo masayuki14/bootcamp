@@ -9,6 +9,7 @@ brew install tig
 brew install fish
 brew install subversion
 brew install tree
+brew install nkf
 
 brew cask install iterm2
 brew cask install google-chrome
