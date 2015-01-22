@@ -87,7 +87,7 @@ if has("autocmd")
   autocmd FileType java setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType perl setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType javascript setl tabstop=4 noexpandtab shiftwidth=4 softtabstop=4
+  autocmd FileType javascript setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd BufRead *.erb set filetype=eruby tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd BufRead *.scss set filetype=css
 
@@ -147,6 +147,7 @@ set statusline=%f\ %m%r%h%w\ [%{&fileencoding},%{&ff}]\ %y%=%-14.(%c-%v,%l/%LL\ 
 
 " ファイル内に記述されたvim用の設定を読み込む
 set modeline
+set modelines=10
 
 " xdebugのポート設定
 let g:debuggerPort = 9001
@@ -156,6 +157,9 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" undo履歴の保存
+set undofile
 
 " NeoBundelの設定 ---------------------------------------------------------
 " vim起動時にのみruntimepathneobundle.vimを追加
@@ -172,7 +176,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " 読み込むプラグインを記載
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc.vim', { 'build' : { 'mac' : 'make -f make_mac.mak' } }
 NeoBundle 'Shougo/vimfiler'
 
 " 読み込んだプラグインも含め、ファイルタイプの検出、
