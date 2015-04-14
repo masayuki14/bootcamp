@@ -11,6 +11,7 @@
 	excludesfile = /Users/morisaki/.gitignore
 	whitespace = tab-in-indent
 	quotepath = false
+	precomposeunicode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
