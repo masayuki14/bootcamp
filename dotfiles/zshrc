@@ -84,3 +84,6 @@ RPROMPT="[%F{yellow}%3~%f %F{white}%*]%f"
 #precmd () { vcs_info }
 #PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
+# include zsh-syntax-hilighting
+[[ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
