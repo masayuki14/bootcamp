@@ -87,3 +87,18 @@ RPROMPT="[%F{yellow}%3~%f %F{white}%*]%f"
 # include zsh-syntax-hilighting
 [[ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+# pecoでコマンド履歴から実行する関数
+function peco-exec-history() {
+  local item
+  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="$item"
+  CURSOR=$#BUFFER
+  #zle accept-line # コマンドを実行する設定。コメントアウトすればコンソールに表示されるだけになる
+}
+zle -N peco-exec-history
+bindkey '^x^r' peco-exec-history
