@@ -84,3 +84,38 @@ RPROMPT="[%F{yellow}%3~%f %F{white}%*]%f"
 #precmd () { vcs_info }
 #PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
+# include zsh-syntax-hilighting
+[[ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# pecoでコマンド履歴から実行する関数
+function peco-exec-history() {
+  local item
+  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="$item"
+  CURSOR=$#BUFFER
+  #zle accept-line # コマンドを実行する設定。コメントアウトすればコンソールに表示されるだけになる
+}
+zle -N peco-exec-history
+bindkey '^x^r' peco-exec-history
+
+# pecoで最近移動したディレクトリに飛ぶ
+function peco-cdr() {
+  local item
+  item=$(cdr -l | sed 's/^[^ ]\{1,\} \{1,\}//' | peco)
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="cd -- $item"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N peco-cdr
+bindkey '^xb' peco-cdr
+
