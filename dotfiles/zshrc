@@ -40,7 +40,7 @@ autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 # 保存する履歴の数
-zstyle ':chpwd:*' recent-dirs-max 200
+zstyle ':chpwd:*' recent-dirs-max 1000
 # cdr が cd も兼ねる
 zstyle ':chpwd:*' recent-dirs-default true
 
