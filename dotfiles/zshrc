@@ -101,7 +101,7 @@ function peco-exec-history() {
   #zle accept-line # コマンドを実行する設定。コメントアウトすればコンソールに表示されるだけになる
 }
 zle -N peco-exec-history
-bindkey '^x^r' peco-exec-history
+bindkey '^r' peco-exec-history
 
 # pecoで最近移動したディレクトリに飛ぶ
 function peco-cdr() {
