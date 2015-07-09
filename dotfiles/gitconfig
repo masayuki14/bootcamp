@@ -26,6 +26,8 @@
 	cm = commit
 	co = checkout
 	br = branch
+	fep = fetch --prune
 	svr = svn rebase
 	svc = svn dcommit
-
+	ffs = flow feature start
+	ffp = flow feature publish
