@@ -191,3 +191,6 @@ call neobundle#end()
 " mvim setting
 "guifont	list of font names to be used in the GUI
 set gfn=Menlo\ Regular:h14
+
+" clipbord 共有
+set clipboard+=unnamed
