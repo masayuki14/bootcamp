@@ -10,6 +10,7 @@ brew install fish
 brew install subversion
 brew install tree
 brew install nkf
+brew install zsh-completions
 
 brew cask install iterm2
 brew cask install google-chrome
@@ -36,3 +37,13 @@ brew cask install vagrant
 brew cask install karabiner
 
 brew cask alfred link
+
+
+brew tap peco/peco
+brew install peco
+
+brew tap caskroom/fonts
+brew cask install font-droid-sans-mono
+brew cask install font-fira-mono
+brew cask install font-ricty-diminished
+brew cask install font-roboto-mono
