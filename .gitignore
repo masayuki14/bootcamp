@@ -23,3 +23,5 @@ dotfiles/vim/.netrwhist
 # vimplugin controled by vundle
 dotfiles/vim/bundle
 !dotfiles/vim/bundle/neobundle.vim
+
+dotfiles/vim/dein
