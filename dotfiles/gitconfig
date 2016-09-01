@@ -3,8 +3,6 @@
 	email = masayuki144@gmail.com
 [color]
 	ui = auto
-[gui]
-	recentrepo = /Users/morisaki/jobspace/calcluster/calcweb
 [merge]
 	##ff = false
 [core]
