@@ -190,6 +190,9 @@ set undofile
 " -------------------------------------------------------------------------
 
 " dein 設定----------------------------------------------------------------
+if &compatible
+  set nocompatible
+endif
 set runtimepath+=~/.vim/repos/dein.vim
 
 " dein.vim 初期化
@@ -203,6 +206,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimfiler')
 
 call dein#end()
+filetype plugin indent on
 " -------------------------------------------------------------------------
 
 " mvim setting
