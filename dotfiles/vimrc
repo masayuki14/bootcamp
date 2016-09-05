@@ -213,8 +213,8 @@ filetype plugin indent on
 "guifont	list of font names to be used in the GUI
 if has('gui_macvim')
   set gfn=Menlo\ Regular:h14
-  set gfn=Source\ Code\ Pro:h14
-  colorscheme macvim
+  "set gfn=Source\ Code\ Pro:h14
+  colorscheme atom-dark
 endif
 
 " clipbord 共有
