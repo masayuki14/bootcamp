@@ -12,6 +12,8 @@ alias ....='cd ../../../'
 alias caskup='for c in `brew cask list`; do ! brew cask info $c | grep -qF "Not installed" || brew cask install --force $c; done'
 
 # alias for git-flow
+alias gitf='git-flow'
+alias gf='git-flow'
 alias gitfs='git-flow feature start'
 alias gfs='git-flow feature start'
 alias gitfp='git-flow feature publish'
