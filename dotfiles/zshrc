@@ -5,7 +5,9 @@ fi
 # zsh-completionsプラグインを利用
 # 事前にインストールしておく
 # $ brew install zsh-completions
-fpath=(/usr/local/share/zsh-completions/(N-/) $fpath)
+#fpath=(/usr/local/share/zsh-completions/(N-/) $fpath)
+[[ -d $HOME/.zsh/zsh-completions/src ]] && fpath=($HOME/.zsh/zsh-completions/src/(N-/) $fpath)
+
 
 # ディレクトリ指定だけで移動する
 setopt AUTO_CD
