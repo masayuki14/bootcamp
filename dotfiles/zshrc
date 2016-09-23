@@ -121,3 +121,7 @@ function peco-cdr() {
 zle -N peco-cdr
 bindkey '^xb' peco-cdr
 
+
+for file in "$HOME"/.zshrc.d/*; do
+  source "$file"
+done
