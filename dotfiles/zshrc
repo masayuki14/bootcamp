@@ -3,11 +3,6 @@ for file in "$HOME"/.zshrc.d/*; do
   source "$file"
 done
 
-if [ -f ~/.sh_alias ]; then
-    source ~/.sh_alias
-fi
-
-
 # ディレクトリ指定だけで移動する
 setopt AUTO_CD
 
