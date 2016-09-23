@@ -7,3 +7,6 @@
 [submodule "dotfiles/zsh/zsh-completions"]
 	path = dotfiles/zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "dotfiles/zsh/zsh-completions-osx"]
+	path = dotfiles/zsh/zsh-completions-osx
+	url = https://github.com/yujinakayama/zsh-completions-osx.git
