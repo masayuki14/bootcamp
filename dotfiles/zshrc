@@ -1,3 +1,7 @@
+for file in "$HOME"/.zshrc.d/*; do
+  source "$file"
+done
+
 if [ -f ~/.sh_alias ]; then
     source ~/.sh_alias
 fi
@@ -122,6 +126,3 @@ zle -N peco-cdr
 bindkey '^xb' peco-cdr
 
 
-for file in "$HOME"/.zshrc.d/*; do
-  source "$file"
-done
