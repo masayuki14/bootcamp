@@ -25,6 +25,7 @@ brew cask install dropbox
 brew cask install evernote
 brew cask install google-chrome
 brew cask install google-japanese-ime
+brew cask install google-nik-collection
 brew cask install iterm2
 brew cask install karabiner
 brew cask install libreoffice
