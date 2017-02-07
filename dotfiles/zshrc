@@ -17,8 +17,6 @@ select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # コマンド履歴設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -108,5 +106,3 @@ function peco-cdr() {
 }
 zle -N peco-cdr
 bindkey '^xb' peco-cdr
-
-
