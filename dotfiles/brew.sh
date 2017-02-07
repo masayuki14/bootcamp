@@ -3,11 +3,18 @@ brew tap caskroom/cask
 brew install brew-cask
 
 brew install fish
+brew install ghq
 brew install git
 brew install git-flow
+brew install jq
 brew install nkf
 brew install node
 #brew install subversion
+brew install peco
+brew install rbenv
+brew install rbenv-gemset
+brew install rbenv-gem-rehash
+brew install ruby-build
 brew install tig
 brew install tree
 brew install zsh-completions
@@ -35,12 +42,9 @@ brew cask install skitch
 brew cask install skype
 brew cask install slack
 brew cask install sourcetree
-brew cask install sparrow
-brew cask install unity
 brew cask install vagrant
 brew cask install virtualbox
 
-brew tap peco/peco
 brew install peco
 
 brew tap caskroom/fonts
