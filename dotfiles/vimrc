@@ -220,3 +220,9 @@ endif
 
 " clipbord 共有
 set clipboard+=unnamed
+
+" grep時にquickfixウィンドウを表示
+augroup QuickFixCmd
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
