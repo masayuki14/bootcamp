@@ -89,6 +89,7 @@ if has("autocmd")
   autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  autocmd FileType sh setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType markdown setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd BufRead *.erb set filetype=eruby tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd BufRead *.scss set filetype=css
@@ -158,9 +159,10 @@ let g:debuggerPort = 9001
 
 " solarized colorscheme
 syntax enable
-set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+set background=dark
+"colorscheme solarized
+colorscheme atom-dark-256
 
 " undo履歴の保存
 set undofile

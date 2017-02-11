@@ -1,13 +1,7 @@
-if [ -f ~/.sh_alias ]; then
-    source ~/.sh_alias
-fi
 
-# zsh-completionsプラグインを利用
-# 事前にインストールしておく
-# $ brew install zsh-completions
-#fpath=(/usr/local/share/zsh-completions/(N-/) $fpath)
-[[ -d $HOME/.zsh/zsh-completions/src ]] && fpath=($HOME/.zsh/zsh-completions/src/(N-/) $fpath)
-
+for file in "$HOME"/.zshrc.d/*; do
+  source "$file"
+done
 
 # ディレクトリ指定だけで移動する
 setopt AUTO_CD
@@ -22,14 +16,6 @@ autoload -Uz select-word-style
 select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# 候補が3以上でカーソル選択
-zstyle ':completion:*:default' menu select=3
-
-# 大文字と小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # コマンド履歴設定
 HISTFILE=~/.zsh_history
@@ -120,4 +106,3 @@ function peco-cdr() {
 }
 zle -N peco-cdr
 bindkey '^xb' peco-cdr
-
