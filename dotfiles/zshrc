@@ -14,7 +14,7 @@ compinit
 # 単語区切りに `/` を追加
 autoload -Uz select-word-style
 select-word-style default
-zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-chars " /=;@:{},|'\""
 zstyle ':zle:*' word-style unspecified
 
 # コマンド履歴設定
