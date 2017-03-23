@@ -10,3 +10,6 @@
 [submodule "dotfiles/zsh/zsh-completions-osx"]
 	path = dotfiles/zsh/zsh-completions-osx
 	url = https://github.com/yujinakayama/zsh-completions-osx.git
+[submodule "dotfiles/zsh/git-flow-completion"]
+	path = dotfiles/zsh/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git

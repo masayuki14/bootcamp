@@ -3,6 +3,7 @@
 # zsh-completions プラグインを利用
 fpath=("$HOME/.zsh/zsh-completions-osx" $fpath)
 fpath=("$HOME/.zsh/zsh-completions/src" $fpath)
+[[ -f $HOME/.zsh/git-flow-completion/git-flow-completion.zsh ]] && source $HOME/.zsh/git-flow-completion/git-flow-completion.zsh
 
 # Initialize.
 zstyle :compinstall filename "$HOME/.zshrc"
