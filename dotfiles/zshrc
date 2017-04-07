@@ -106,3 +106,23 @@ function peco-cdr() {
 }
 zle -N peco-cdr
 bindkey '^xb' peco-cdr
+
+# for terminal notifier
+# brew install terminal-notifier
+function _preexec_notifier() {
+  _prev_cmd_start_time=$SECONDS
+  _cmd_is_running=true
+}
+
+function _precmd_notifier() {
+  if $_cmd_is_running ; then
+    _prev_cmd_exec_time=$(( SECONDS - _prev_cmd_start_time ))
+    if ((_prev_cmd_exec_time > 5)); then
+      terminal-notifier -message "command execution finished"
+    fi
+  fi
+  _cmd_is_running=false
+}
+
+add-zsh-hook precmd _precmd_notifier
+add-zsh-hook preexec _preexec_notifier

@@ -15,6 +15,7 @@ brew install rbenv
 brew install rbenv-gemset
 brew install rbenv-gem-rehash
 brew install ruby-build
+brew install terminal-notifier
 brew install tig
 brew install tree
 brew install zsh-completions
