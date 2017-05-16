@@ -53,3 +53,6 @@ brew cask install font-droid-sans-mono
 brew cask install font-fira-mono
 brew cask install font-ricty-diminished
 brew cask install font-roboto-mono
+brew cask install font-dejavu-sans
+font-source-han-code-jp
+font-myrica
