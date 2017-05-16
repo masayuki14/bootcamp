@@ -22,7 +22,7 @@
 [alias]
 	st = status
 	df = diff
-	cm = commit
+	cm = commit -m
 	co = checkout
 	br = branch
 	fep = fetch --prune
