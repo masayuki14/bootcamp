@@ -19,6 +19,7 @@ brew install terminal-notifier
 brew install tig
 brew install tree
 brew install zsh-completions
+brew install libxml2 libxslt
 
 #brew cask install filezilla
 #brew cask install keyremap4mackbook
@@ -27,19 +28,19 @@ brew install zsh-completions
 #brew cask install xtrafinder
 brew cask install alfred
 brew cask install atom
-brew cask install coteditor
+#brew cask install coteditor
 brew cask install dash
 brew cask install dropbox
 brew cask install evernote
 brew cask install google-chrome
 brew cask install google-japanese-ime
-brew cask install google-nik-collection
+#brew cask install google-nik-collection
 brew cask install iterm2
-brew cask install karabiner
-brew cask install libreoffice
+brew cask install karabiner-elements
+#brew cask install libreoffice
 brew cask install macvim
 brew cask install sequel-pro
-brew cask install skitch
+#brew cask install skitch
 brew cask install skype
 brew cask install slack
 brew cask install sourcetree
