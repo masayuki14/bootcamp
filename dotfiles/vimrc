@@ -95,6 +95,8 @@ if has("autocmd")
   autocmd BufRead *.scss set filetype=css
   autocmd BufRead *.coffee set filetype=javascript
   autocmd BufRead *.t set filetype=perl
+  autocmd BufRead *.vue set filetype=html.css.javascript
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
   "autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd BufRead *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -258,3 +260,6 @@ augroup END
 " Vim gets slows down when using this plugin How can I fix that?
 " https://github.com/posva/vim-vue#vim-gets-slows-down-when-using-this-plugin-how-can-i-fix-that
 " let g:vue_disable_pre_processors=1
+
+" vimfiler 設定
+autocmd filetype vimfiler nmap <buffer> l <Plug>(vimfiler_expand_tree)
