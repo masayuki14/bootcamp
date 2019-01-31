@@ -6,7 +6,7 @@
 [merge]
 	##ff = false
 [core]
-	excludesfile = /Users/morisaki/.gitignore
+	excludesfile = ~/.gitignore
 	whitespace = tab-in-indent
 	quotepath = false
 	precomposeunicode = true

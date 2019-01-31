@@ -83,7 +83,7 @@ if has("autocmd")
   " ruby のインデント設定
   autocmd FileType ruby setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType html setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
-  autocmd FileType css  setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType css  setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType java setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType perl setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
@@ -97,6 +97,11 @@ if has("autocmd")
   autocmd BufRead *.scss set filetype=css
   autocmd BufRead *.coffee set filetype=javascript
   autocmd BufRead *.t set filetype=perl
+  autocmd BufRead *.vue set filetype=html.css.javascript
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+  "autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  autocmd BufRead *.vue setlocal filetype=vue.html.javascript.css tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
   " 編集箇所を目立たせる
   autocmd insertLeave * se nocul
@@ -201,17 +206,39 @@ endif
 set runtimepath+=~/.vim/repos/dein.vim
 
 " dein.vim 初期化
-call dein#begin(expand('~/.vim/dein'))
+if dein#load_state(expand('~/.vim/dein'))
 
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#begin(expand('~/.vim/dein'))
+  call dein#add('~/.vim/repos/dein.vim')
 
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimfiler')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-call dein#end()
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimfiler')
+
+  call dein#add('posva/vim-vue')
+
+"call dein#begin(expand('~/.vim/dein'))
+"
+"call dein#add('Shougo/dein.vim')
+"call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+"
+"call dein#add('Shougo/neocomplete.vim')
+"call dein#add('Shougo/unite.vim')
+"call dein#add('Shougo/vimfiler')
+"
+"call dein#add('posva/vim-vue')
+"
+"call dein#end()
+
+  call dein#end()
+  call dein#save_state()
+endif
+
 filetype plugin indent on
+syntax enable
 " -------------------------------------------------------------------------
 
 " mvim setting
@@ -230,3 +257,11 @@ augroup QuickFixCmd
   autocmd!
   autocmd QuickFixCmdPost *grep* cwindow
 augroup END
+
+" for 'vim-vue' setting
+" Vim gets slows down when using this plugin How can I fix that?
+" https://github.com/posva/vim-vue#vim-gets-slows-down-when-using-this-plugin-how-can-i-fix-that
+" let g:vue_disable_pre_processors=1
+
+" vimfiler 設定
+autocmd filetype vimfiler nmap <buffer> l <Plug>(vimfiler_expand_tree)
