@@ -86,6 +86,8 @@ if has("autocmd")
   autocmd FileType css  setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType java setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType perl setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType sql  setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType plsql  setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
   autocmd FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
