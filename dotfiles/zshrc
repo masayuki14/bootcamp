@@ -124,5 +124,20 @@ function _precmd_notifier() {
   _cmd_is_running=false
 }
 
-add-zsh-hook precmd _precmd_notifier
-add-zsh-hook preexec _preexec_notifier
+# add-zsh-hook precmd _precmd_notifier
+# add-zsh-hook preexec _preexec_notifier
+#
+
+# ghq look 廃止だからpecoでcdする
+function ghq-look-peco() {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N ghq-look-peco
+bindkey '^G^L' ghq-look-peco
+
+
