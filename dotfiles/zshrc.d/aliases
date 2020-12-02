@@ -9,7 +9,7 @@ alias tailf='tail -f'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias caskup='for c in `brew cask list`; do ! brew cask info $c | grep -qF "Not installed" || brew cask install --force $c; done'
+alias caskup='for c in `brew list --cask`; do ! brew info --cask $c | grep -qF "Not installed" || brew cask install --force $c; done'
 
 # alias for git-flow
 alias gitf='git-flow'
